@@ -1,0 +1,21 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="dji.v5.ux" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="23"
+6-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="32" />
+7-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.VIBRATE" />
+9-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml:5:5-66
+9-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml:5:22-63
+10    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+10-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml:6:5-81
+10-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml:6:22-78
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml:7:5-79
+11-->E:\AndroidProject\FreshDji\android-sdk-v5-uxsdk\src\main\AndroidManifest.xml:7:22-76
+12
+13</manifest>

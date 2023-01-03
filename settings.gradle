@@ -1,0 +1,11 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Dji New App"
+include ':app'
+include ':uxsdk'// uxsdk module
+project(':uxsdk').projectDir = new File(rootProject.projectDir, '../FreshDji/android-sdk-v5-uxsdk')
