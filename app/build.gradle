@@ -16,20 +16,44 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [api_key: DJI_APP_KEY]
+
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
     }
 
     buildTypes {
+        debug{
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        // 因为mrtc库内部使用了NDK的c++_shared的编译参数
+        // 与其他库重复引用了，因此选其中一个即可
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 
     packagingOptions {
@@ -69,9 +93,8 @@ dependencies {
 
     implementation "com.dji:dji-sdk-v5-aircraft:5.1.0"
     implementation "com.dji:dji-sdk-v5-networkImp:5.1.0"
+    implementation project(path: ':uxsdk')
     compileOnly "com.dji:dji-sdk-v5-aircraft-provided:5.1.0"
-
-    api project(':uxsdk')
 
 
     testImplementation 'junit:junit:4.13.2'

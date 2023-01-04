@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
     private fun registerApp() {
         SDKManager.getInstance().init(this, object : SDKManagerCallback {
             override fun onRegisterSuccess() {
-
                 Log.e(TAG, "myApp onRegisterSuccess")
                 runOnUiThread {
                     button.isEnabled = true
