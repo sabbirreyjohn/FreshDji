@@ -1,15 +1,14 @@
 package xyz.androidrey.freshdjiapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import dji.v5.common.error.IDJIError
 import dji.v5.common.register.DJISDKInitEvent
 import dji.v5.manager.SDKManager
 import dji.v5.manager.interfaces.SDKManagerCallback
-import dji.v5.ux.sample.showcase.defaultlayout.DefaultLayoutActivity
 
 private const val TAG = "myApp"
 
